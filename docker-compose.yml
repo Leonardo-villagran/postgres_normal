@@ -1,0 +1,38 @@
+version: '3.9'
+
+networks:
+  mi-red-postgres:
+
+services:
+  postgres:
+    image: postgres:15.4-bullseye
+    restart: always
+    container_name: postgres
+    env_file:
+      - ./.env
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+      - ./pg_backup:/pg_backup  # Volumen de respaldo
+    ports:
+      - "${MI_PUERTO_EXTERNO}:5432"  # Usamos la variable para el puerto externo
+    networks:
+      - mi-red-postgres
+
+  # pgadmin:
+  #   image: dpage/pgadmin4:7.7
+  #   container_name: pgadmin
+  #   environment:
+  #     - PGADMIN_DEFAULT_EMAIL=admin@pgadmin.com
+  #     - PGADMIN_DEFAULT_PASSWORD=admin
+  #     - PGADMIN_LISTEN_ADDRESS=0.0.0.0
+  #     - PGADMIN_SERVER_MODE=true  # Habilita el modo de servidor de pgAdmin
+  #   ports:
+  #     - "8082:80"
+  #   networks:
+  #     - mi-red-postgres-pgadmin
+  #   volumes:
+  #     - ./pgadmin_data:/var/lib/pgadmin  # Volumen de datos de pgAdmin
