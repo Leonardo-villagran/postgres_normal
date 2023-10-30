@@ -23,7 +23,7 @@ git clone https://github.com/Leonardo-villagran/postgres_normal
    POSTGRES_USER=postgres
    POSTGRES_PASSWORD=postgres
    POSTGRES_DB=postgres
-   MI_PUERTO_EXTERNO=5432
+   POSTGRES_PORT=5432
    ```
 
    Asegúrate de configurar los valores según tus necesidades.

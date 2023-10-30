@@ -18,7 +18,7 @@ services:
       - ./postgres_data:/var/lib/postgresql/data
       - ./pg_backup:/pg_backup  # Volumen de respaldo
     ports:
-      - "${MI_PUERTO_EXTERNO}:5432"  # Usamos la variable para el puerto externo
+      - "${POSTGRES_PORT}:5432"  # Usamos la variable para el puerto externo
     networks:
       - mi-red-postgres
 
