@@ -23,7 +23,8 @@ services:
       - mi-red-postgres
 
   # pgadmin:
-  #   image: dpage/pgadmin4:7.7
+  #   image: dpage/pgadmin4:8.3
+  #   restart: always
   #   container_name: pgadmin
   #   environment:
   #     - PGADMIN_DEFAULT_EMAIL=admin@pgadmin.com
@@ -33,6 +34,6 @@ services:
   #   ports:
   #     - "8082:80"
   #   networks:
-  #     - mi-red-postgres-pgadmin
+  #     - mi-red-postgres
   #   volumes:
   #     - ./pgadmin_data:/var/lib/pgadmin  # Volumen de datos de pgAdmin
