@@ -1,4 +1,4 @@
-# Configuración de Docker Compose para PostgreSQL
+# Docker Compose para desplegar un servidor de PostgreSQL
 
 Este archivo Docker Compose facilita la configuración de un entorno de desarrollo de PostgreSQL en tu máquina local. Puedes utilizarlo para desplegar una instancia de PostgreSQL y gestionar tus bases de datos de manera eficiente.
 
