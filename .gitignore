@@ -1,4 +1,4 @@
 .env
 postgres_data/*
 pg_backup/*
-
+pgadmin_data/*
