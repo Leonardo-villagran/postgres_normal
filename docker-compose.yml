@@ -5,7 +5,8 @@ networks:
 services:
   postgres:
     # image: postgres:17.4-bullseye  # Imagen con PostgreSQL 17 y PostGIS 3.5
-    image: postgres:17.7-bookworm # Imagen con PostgreSQL 17.7
+    # image: postgres:17.7-bookworm # Imagen con PostgreSQL 17.7
+    image: 18.4-bookworm # Imagen con PostgreSQL 18.4
     restart: always
     container_name: postgres
     env_file:
